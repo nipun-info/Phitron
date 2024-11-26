@@ -571,11 +571,11 @@ public:
 
 int main()
 {
-    Student rahim(45, 5, 3.2);
-    Student karim(2, 8, 4.2);
+    // Student rahim(45, 5, 3.2);
+    // Student karim(2, 8, 4.2);
 
-    cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
-    cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
+    // cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
+    // cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
 
     return 0;
 }
@@ -605,11 +605,11 @@ public:
 
 int main()
 {
-    Student rahim(40, 5, 3.2);
-    Student karim(2, 8, 4.2);
+    // Student rahim(40, 5, 3.2);
+    // Student karim(2, 8, 4.2);
 
-    cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
-    cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
+    // cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
+    // cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
 
     return 0;
 }
@@ -667,20 +667,20 @@ public:
     }
 };
 
-Student *fun2()
-{
-    Student rahim(40, 5, 5.0);
-    Student *p = &rahim;
-    return p;
-}
+// Student *fun2()
+// {
+//     Student rahim(40, 5, 5.0);
+//     Student *p = &rahim;
+//     return p;
+// }
 
-int main()
-{
-    Student *p = fun2();
-    cout << p->roll << " " << p->cls << " " << p->gpa << endl;
+// int main()
+// {
+//     Student *p = fun2();
+//     cout << p->roll << " " << p->cls << " " << p->gpa << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 // 🪂🪂 Dynamic Object 🪂🪂
 
 // 🪂🪂 Sort function in C++ 🪂🪂
@@ -1208,6 +1208,281 @@ int main()
 
 
 /******************************************************
-🪴🪴🪴🪴 MO-6: String, Class, Objects  🪴🪴🪴🪴
- // 🪂🪂 Constructor 🪂🪂
+🪴🪴🪴🪴 MO-6: More about class and string  🪴🪴🪴🪴
+🧜Introduction
+🧜String Constructor
+🧜Sort string using sort() function
+🧜Range based for loop
+🧜Reverse function in C++
+🧜Reverse word codeforces solution
+🧜Function inside class
+🧜Copy dynamic object
+
+*******************************************************/
+
+// *******🧜String Constructor
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    // 😅 ---- Way-1:
+    string s("Hello");
+    cout << s << endl;
+
+    // 😅 ---- Way-2:
+    string s("Hello", 4);
+    cout << s << endl;  // print first 4 letter:>> Hell
+
+    // 😅 ---- Way-3:
+    string s = "Hello World";
+    string t(s, 4);
+
+    cout << t << endl;  // print all letter without firt 4 letter:>> o World
+
+    // 😅 ---- Way-3:
+    string s(5, 'N');
+    cout << s << endl;  // print input character:>> NNNNN
+
+
+    return 0;
+}
+
+// *******🧜Sort string using sort() function
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    // cin >> s;
+    getline(cin, s);
+
+    sort(s.begin(), s.end());
+
+    cout << s << endl;  
+
+    return 0;
+}
+
+// *******🧜Range based for loop
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    // cin >> s;
+    getline(cin, s);
+
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     cout << s[i] << endl;
+    // }
+
+    for (char c : s)
+    {
+        cout << c << endl;
+    }
+
+    return 0;
+}
+
+// *******🧜Reverse function in C++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    // reversing the array
+    reverse(a, a+n);
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
+    
+
+    return 0;
+}
+
+// 😴---Example:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    // cin >> s;
+    getline(cin, s);
+    reverse(s.begin(), s.end());
+
+    cout << s << endl;
+
+    return 0;
+}
+
+// *******🧜Reverse word codeforces solution
+// https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/Q
+// 🗽Solution
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    getline(cin, s);
+    stringstream ss(s);
+    string word;
+    ss >> word;
+
+    reverse(word.begin(), word.end());
+    cout << word;
+
+    while (ss >> word)
+    {
+        reverse(word.begin(), word.end());
+        cout << " " << word;
+    }
+
+    return 0;
+}
+
+// *******🧜Function inside class
+// ---------- Example-01:
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    string name;
+    int roll;
+
+    Student(string name, int roll)
+    {
+        this->name = name;
+        this->roll = roll;
+    }
+
+    void hello()
+    {
+        cout << "Hello From " << name << " " << roll << endl;
+    }
+};
+
+int main()
+{
+    // Student sakib("Sakib Ahmed", 23);
+    // sakib.hello();
+
+    // Student rakib("Rakib Ahmed", 28);
+    // rakib.hello();
+    // cout << sakib.name << " " << sakib.roll << endl;
+
+    return 0;
+}
+
+// 😆----- Example:02
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    string name;
+    int roll;
+    int math;
+    int english;
+
+    Student(string name, int roll, int math, int english)
+    {
+        this->name = name;
+        this->roll = roll;
+        this->math = math;
+        this->english = english;
+    }
+
+    void total()
+    {
+        cout << "Total marks of " << name << " = " << math + english << endl;
+    }
+};
+
+int main()
+{
+    Student sakib("Sakib Ahmed", 23, 85, 92);
+    sakib.total();
+
+    Student rakib("Rakib Ahmed", 28, 65, 95);
+    rakib.total();
+
+    return 0;
+}
+
+
+
+// *******🧜Copy dynamic object
+#include <bits/stdc++.h>
+using namespace std;
+
+class Cricketer
+{
+    public:
+    string country;
+    int jersey;
+
+    Cricketer(string country, int jersey){
+        this->country = country;
+        this->jersey = jersey;
+    }
+};
+
+int main()
+{
+    Cricketer* dhoni = new Cricketer("India", 100);
+    Cricketer* kohli = new Cricketer("India", 18);
+    
+    // kohli->country = dhoni->country;
+    // kohli->jersey = dhoni->jersey;
+
+    *kohli = *dhoni;
+
+    // cout << dhoni->jersey << " " << kohli->jersey << endl;
+    delete dhoni;
+    cout << kohli->country << " " << kohli->jersey << endl;
+
+    return 0;
+}
+
+
+
+
+
+/******************************************************
+🪴🪴🪴🪴 Conceptual Session:Week02_Co   🪴🪴🪴🪴
+🧜Introduction
+ // 🪂🪂 Introduction 🪂🪂
+*******************************************************/
+
+
+
+
+
+
+
+
+/******************************************************
+🪴🪴🪴🪴 MO-7:   🪴🪴🪴🪴
+🧜Introduction
+ // 🪂🪂 Introduction 🪂🪂
 *******************************************************/
