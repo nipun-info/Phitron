@@ -493,12 +493,12 @@ input:
 nahid 99 4.58
 habib 74 4.98
 
-*/ 
+*/
 #include <bits/stdc++.h>
 using namespace std;
 class Student
 {
-    public:
+public:
     char name[100];
     int roll;
     double gpa;
@@ -509,7 +509,7 @@ int main()
     // Student a, b;
     // cin >> a.name >> a.roll >> a.gpa;
     // cin >> b.name >> b.roll >> b.gpa;
-    
+
     // cout << a.name << " " << a.roll << " " << a.gpa << endl;
     // cout << b.name << " " << b.roll << " " << b.gpa << endl;
 
@@ -549,8 +549,6 @@ using namespace std;
 //     cout << b.name << " " << b.roll << " " << b.gpa << endl;
 //     return 0;
 // }
-
-
 
 // 🪂🪂 Constructor and its Simulation 🪂🪂
 #include <bits/stdc++.h>
@@ -669,16 +667,16 @@ public:
     }
 };
 
-Student* fun2()
+Student *fun2()
 {
     Student rahim(40, 5, 5.0);
-    Student* p = &rahim;
+    Student *p = &rahim;
     return p;
 }
 
 int main()
 {
-    Student* p = fun2();
+    Student *p = fun2();
     cout << p->roll << " " << p->cls << " " << p->gpa << endl;
 
     return 0;
@@ -686,38 +684,6 @@ int main()
 // 🪂🪂 Dynamic Object 🪂🪂
 
 // 🪂🪂 Sort function in C++ 🪂🪂
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /******************************************************
 🪴🪴🪴🪴 WeeK01-Conceptual-01 🪴🪴🪴🪴
@@ -753,7 +719,7 @@ int main()
 
     cout << &a << endl; // a er address print korbe
 
-    int *a_ptr = &a;    // a er address রাখবে
+    int *a_ptr = &a; // a er address রাখবে
 
     cout << a_ptr << endl; // a er address print korbe
 
@@ -827,7 +793,7 @@ int main()
 {
     int *a = new int;
 
-    cin >> *a ;
+    cin >> *a;
 
     cout << *a << endl;
 
@@ -891,13 +857,12 @@ int main()
 
 // 🦋.....Example🦋 Array in function video show again
 
-
 /******************************************************
 🪴🪴🪴🪴 MO-5:String Class in C++  🪴🪴🪴🪴
 🧜String in C++
 🧜String Capacity Functions
 🧜String Element Access
-🧜String Modifiers 
+🧜String Modifiers
 🧜String Iterators
 🧜String input with spaces
 🧜Stringstream
@@ -960,7 +925,6 @@ https://cplusplus.com/reference/string/string/
     s.begin() -> pointer to the first element.
     s.end() -> pointer to the next element after the last element of the string.
 
-
 *******************************************************/
 
 // 🧜String in C++
@@ -1013,44 +977,237 @@ int main()
 }
 
 // 🧜String Capacity Functions
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s = "Hard working for dream work";
+
+    cout << s.capacity() << endl;
+
+    return 0;
+}
+
+//🎆------ Example: size and clear() function
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string str  = "Hard working for dream work";
+
+    cout << str.size() << endl;
+
+    str.clear();
+    cout << str.size() << endl;
+
+    if(str.empty() == true)
+    {
+        cout << "Empty" << endl;
+    }
+    else 
+    { 
+        cout << "Not Empty" << endl;
+    }
+
+    return 0;
+}
+
+//🎆------ Example: resize() function
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string str = "Hard working for dream work";
+    str.resize(4);
+    cout << str << endl;
+    str.resize(30, 'X');
+
+    cout << str << endl;
+
+    return 0;
+}
 
 
 // 🧜String Element Access
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string str;
+    cin >> str;
+    cout << "Full Str: " << str << endl;
+    cout << "0th index Letter: " << str[0] << endl;
+    cout << "4th index Letter: " << str[4] << endl;
+    cout << "0th index Letter: " << str.at(0) << endl;
+    cout << "last index Letter: " << str[str.size() - 1] << endl;
+    cout << "last index Letter: " << str.back() << endl;
+    cout << "First index Letter: " << str.front() << endl;
+
+    return 0;
+}
 
 
-// 🧜String Modifiers 
+// 🧜String Modifiers
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string strOne = "Nasihul ";
+    string strTwo = "Nipun";
+
+    // strOne += strTwo;
+    strOne.append(strTwo);  // <- same-> strOne += strTwo;
+    cout << strOne << endl;
+
+    // strOne.push_back('S');
+    strOne += 'N'; // <- same-> strOne.push_back('S');
+    cout << strOne << endl;
+
+
+    // 😀😂
+    string strOne = "Nasihul";
+    cout << strOne << endl;
+    
+    strOne.pop_back();
+    strOne.pop_back();
+
+    cout << strOne << endl;
+
+    // 😀😂
+    string s = "Phitron";
+    string s2 = "Programming Hero";
+
+    // s = s2;
+    s.assign("CodeAcademy"); // or-> s = s2;
+
+    cout << s << endl;
+
+    // 😀😂
+    string s = "Phitron";
+    // s.erase(4);
+    s.erase(4, 2);
+
+    cout << s << endl;
+
+    // 😀😂
+    string s = "Phitron";
+    // s.replace(10, 5, "Programming");
+    s.insert(0, "Programming");
+
+    cout << s << endl;
+
+    return 0;
+}
+
 
 
 // 🧜String Iterators
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s = "Bangladesh";
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     cout << s[i] << endl;
+    // }
+
+    // cout << *s.begin() << endl;
+    // cout << *(s.end() - 1) << endl;
+
+    // for (string:: iterator it = s.begin(); it < s.end(); it++)
+    // {
+    //     cout << *it << endl;
+    // }
+    
+
+    for (auto it = s.begin(); it < s.end(); it++)
+    {
+        cout << *it << endl;
+    }
+
+    return 0;
+}
+
 
 
 // 🧜String input with spaces
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    // cin >> s;
+    getline(cin, s);
+    cout << s << endl;
+
+    return 0;
+}
+
+// ------example:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int x;
+    cin >> x;
+    string s;
+    cin.ignore();
+
+    getline(cin,s);
+
+    cout << x << endl;
+    cout << s << endl;
+
+    return 0;
+}
 
 
 // 🧜Stringstream
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    getline(cin, s);
+    cout << s << endl;
+
+    stringstream ss(s);
+    string word;
+
+    ss >> word;
+    cout << word << endl;
+
+    ss >> word;
+    cout << word << endl;
+
+    ss >> word;
+    cout << word << endl;
+
+    // 👌
+    while (ss >> word)
+    {
+        cout << word << endl;
+    }
+
+    return 0;
+}
+
 
 // 🧜Extra practise link: https://docs.google.com/document/d/14sdQIgBZV29d8cSMPfMasotAc_jhZNgxaqRSOG_yR1c/edit?tab=t.0
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /******************************************************
-🪴🪴🪴🪴 MO-5:  🪴🪴🪴🪴
+🪴🪴🪴🪴 MO-6: String, Class, Objects  🪴🪴🪴🪴
  // 🪂🪂 Constructor 🪂🪂
 *******************************************************/
