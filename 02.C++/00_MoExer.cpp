@@ -218,6 +218,7 @@ int main()
 // 🪂🪂🪂🪂 Summary and bits header file
 #include <bits/stdc++.h>
 
+
 /******************************************************
 🪴🪴🪴🪴 MO-2: Dynamic Memory Allocation 🪴🪴🪴🪴
 *******************************************************/
@@ -371,6 +372,7 @@ int main()
 }
 
 // 🪂🪂 Summary 🪂🪂
+
 
 // Search snippet generator: https://snippet-generator.app/
 // Select VSCode and input code and copied
@@ -684,6 +686,29 @@ public:
 // 🪂🪂 Dynamic Object 🪂🪂
 
 // 🪂🪂 Sort function in C++ 🪂🪂
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    // sort(starting, ending);
+    // sort(a, a+n);    // ascending
+    sort(a, a + n, greater<int>()); // descending
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
+
+    return 0;
+}
 
 /******************************************************
 🪴🪴🪴🪴 WeeK01-Conceptual-01 🪴🪴🪴🪴
@@ -780,7 +805,7 @@ int main()
     cout << ar << endl;
     cout << *ar << endl;
 
-    delete ar;
+    delete[] ar;
 
     return 0;
 }
@@ -1420,11 +1445,11 @@ public:
 
 int main()
 {
-    Student sakib("Sakib Ahmed", 23, 85, 92);
-    sakib.total();
+    // Student sakib("Sakib Ahmed", 23, 85, 92);
+    // sakib.total();
 
-    Student rakib("Rakib Ahmed", 28, 65, 95);
-    rakib.total();
+    // Student rakib("Rakib Ahmed", 28, 65, 95);
+    // rakib.total();
 
     return 0;
 }
@@ -1469,14 +1494,34 @@ int main()
 
 
 /******************************************************
-🪴🪴🪴🪴 Conceptual Session:Week02_Co   🪴🪴🪴🪴
-🧜Introduction
- // 🪂🪂 Introduction 🪂🪂
+🪴🪴🪴🪴 Conceptual Session:Week02_Con01   🪴🪴🪴🪴
+🧜String Recap:
+🧜Definition
+🧜Declartion + User Input
+🧜Input with Spaces
+🧜Useful Access Function
+    - index
+    - front()
+    - back()
+🧜Useful Modification
+    - Concat using
+    - push_back() and pop_back
+    - Easy assignment using
+    - Erase -> s.erase(idx, number of characters)
+    - Replace -> s.replace(idx, num of characters, string)
+    - Insert -> str1.insert(pos, c); str1.insert(pos, str2)
+
+🧜Find Function
+🧜Stringstream
+🧜Reverse Function
+🧜Sort Function
+
+🧜Problem solving:
+
+    - replace
+    - erase + insert
+
 *******************************************************/
-
-
-
-
 
 
 
@@ -1486,3 +1531,5 @@ int main()
 🧜Introduction
  // 🪂🪂 Introduction 🪂🪂
 *******************************************************/
+
+
